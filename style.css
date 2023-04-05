@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Alkatra:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+body{
+    background-color: rgb(1, 1, 41);
+    color: white;
+}
+*{
+    margin: 0;
+    padding: 0;
+
+
+}
+nav ul{
+    display: flex;
+    /* justify-content: space-around; */
+    align-items: center;
+   list-style-type: none;
+}
+nav ul li{
+    padding: 0 20px;
+    font-family: 'Roboto', sans-serif;
+
+
+}
+.logo img{
+    width: 85px;
+}
+.logo{
+    display: flex;
+    align-items: center;
+    padding: 0 20;
+    font-family: 'Alkatra', cursive;
+}
+nav{
+
+}

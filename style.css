@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Reddit+Mono:wght@200..900&display=swap');
+body{
+    background-color: #023047;
+    font-family: "Reddit Mono", monospace;
+}
+
+
+header{
+    background-color: #ffb703;
+    padding: .5em;
+
+    nav{
+        display: flex;
+        justify-content: space-between;
+
+        .logo img{
+            width: 50px;
+            border-radius: 1em;
+            border-color: #023047;
+            border: 5px solid #023047;
+        }
+
+        ul{
+            display: flex;
+            flex-wrap: wrap;
+            list-style-type: none;
+            gap: 1em;
+
+            li a{
+                text-decoration: none;
+                color: #023047;
+                font-size: 24px;
+                font-weight: 700;
+                transition: 1s;
+
+            }:hover{
+                color: aliceblue;
+                transform: scaleX(2);
+            }
+        }
+    }
+}
+.container{
+    height: 60vh;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+.container img{
+    width: 300px;
+    transition: 1s;
+
+}
+.container:hover img{
+    width: 200px;
+}
+
+.startbtn{
+    background-color: #ffb703;
+    border: none;
+    padding: .5em 1em .5em 1em;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    transition: 1s;
+}
+.container:hover .startbtn{
+    transform: scaleX(2);
+    cursor: pointer;
+
+}
+.subContainer{
+    display: flex;
+    justify-content: space-between;
+    color: aliceblue;
+    padding: 1em 0;
+}
+

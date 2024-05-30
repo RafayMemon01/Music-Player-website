@@ -51,3 +51,18 @@ setInterval(() => {
 
 
   console.log()
+
+
+const checkedBox = ()=>{
+  let checkBox = document.getElementById("checkbx");
+  let player = document.querySelector(".player")
+
+  if (checkBox.checked!==true) {
+
+    player.setAttribute("id","disable");
+    
+  }
+  else{
+    player.removeAttribute("id");
+  }
+}

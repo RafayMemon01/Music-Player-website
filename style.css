@@ -3,7 +3,12 @@ body{
     background-color: #023047;
     font-family: "Reddit Mono", monospace;
 }
-
+#disable{
+    opacity: 0 !important;
+    /* display: none !important; */
+    transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+    visibility: hidden;
+}
 
 header{
     background-color: #ffb703;
@@ -75,5 +80,88 @@ header{
     justify-content: space-between;
     color: aliceblue;
     padding: 1em 0;
+    align-items: center;
+}
+#check ~checked{
+    body{
+        background-color: red;
+    }
 }
 
+
+.player{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: .5em;
+    background-color: #ffb703;
+    padding: 1em;
+    transition: 1s all;
+    position: sticky;
+    bottom: 20;
+    transition: 1s ease-in all;
+    
+
+    .progressBarContainer{
+        display: flex;
+        #myProgressBar {
+            width: 100%;
+            -webkit-appearance: none;
+            appearance: none;
+            height: 10px;
+            background: #ccc;
+            border-radius: 5px;
+            outline: none;
+            opacity: 0.9;
+            -webkit-transition: .2s;
+            transition: opacity .2s;
+        }
+    }
+}
+#myProgressBar:hover {
+    opacity: 1;
+}
+
+#myProgressBar::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #023047;
+    cursor: pointer;
+    box-shadow: 0 0 2px rgba(0,0,0,0.5);
+}
+
+#myProgressBar::-moz-range-thumb {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #023047;
+    cursor: pointer;
+    box-shadow: 0 0 2px rgba(0,0,0,0.5);
+}
+
+#myProgressBar::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 10px;
+    cursor: pointer;
+    background: #ccc;
+    border-radius: 5px;
+}
+
+
+#myProgressBar::-moz-range-track {
+    width: 100%;
+    height: 10px;
+    cursor: pointer;
+    background: #ccc;
+    border-radius: 5px;
+}
+
+.progressBarContainer span {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+}

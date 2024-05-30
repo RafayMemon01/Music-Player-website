@@ -45,13 +45,26 @@
         <div class="subContainer">
             <div>
                 <label for="check" class="checkBox">Show Player</label>
-                <input type="checkbox" name="" id="check">
+                <input type="checkbox" name="" onclick="checkedBox()" id="checkbx">
             </div>
             <div class="time">
-                
             </div>
         </div>
     </main>
+
+    <div class="player" id="disable">
+        <div class="icons">
+            <!-- fontawesome icons -->
+            <i class="fas fa-3x fa-step-backward" id="previous"></i>
+            <i class="far fa-3x fa-play-circle" id="masterPlay"></i>
+            <i class="fas fa-3x fa-step-forward" id="next"></i> 
+        </div>
+        <div class="progressBarContainer ">
+            <span>1:00</span>
+            <input id="myProgressBar" value="0" type="range" min="0" max="100" name="range">
+            <span>0:00</span>
+        </div>
+    </div>
 
 
     <script src="./script.js"></script>

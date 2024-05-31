@@ -1,4 +1,12 @@
+console.log("Warning! The Developer Tools in Browser Only Use When Website is in Development Stage. Don't Perform Any Task Here!")
+
+
 // let audioElement = new Audio("/Songs/1.mp3");
+
+
+
+
+
 
 // let childNames = [
 //   {cname: "Rafay"},

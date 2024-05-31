@@ -1,13 +1,54 @@
 @import url('https://fonts.googleapis.com/css2?family=Reddit+Mono:wght@200..900&display=swap');
-body{
+body {
     background-color: #023047;
     font-family: "Reddit Mono", monospace;
+    border-left: 3px solid green;
+    border-right: 3px solid green;
+    padding-left: .4em;
+    padding-right: .4em;
+    transition: border-color 1s ease-in-out;
+    animation: colorChanger 10s infinite;
+}
+
+@keyframes colorChanger {
+    0% {
+        border-color: rgb(255, 0, 0); /* Red */
+    }
+    10% {
+        border-color: rgb(0, 255, 0); /* Green */
+    }
+    20% {
+        border-color: rgb(0, 0, 255); /* Blue */
+    }
+    40% {
+        border-color: rgb(255, 255, 0); /* Yellow */
+    }
+    50% {
+        border-color: rgb(255, 0, 255); /* Magenta */
+    }
+    60% {
+        border-color: rgb(0, 255, 242); /* Magenta */
+    }
+    70% {
+        border-color: rgb(255, 225, 0); /* Magenta */
+    }
+    80% {
+        border-color: rgb(255, 0, 25); /* Magenta */
+    }
+    90% {
+        border-color: rgb(0, 17, 255); /* Magenta */
+    }
+    100% {
+        border-color: rgb(72, 255, 0); /* Magenta */
+    }
 }
 #disable{
     opacity: 0 !important;
     /* display: none !important; */
     transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
     visibility: hidden;
+    /* position: relative !important;
+    transition: position .5s ease-in-out; */
 }
 
 header{
@@ -81,6 +122,7 @@ header{
     color: aliceblue;
     padding: 1em 0;
     align-items: center;
+    z-index: 0;
 }
 #check ~checked{
     body{
@@ -164,4 +206,84 @@ header{
 .progressBarContainer span {
     font-family: Arial, sans-serif;
     font-size: 14px;
+}
+
+@media only screen and (max-width:520px){
+    
+    .container img{
+        width: 200px;
+        transition: 1s;
+    
+    }
+
+    nav{
+        justify-content: center !important;
+        align-items: center !important;
+        flex-wrap: wrap;
+    }
+    nav ul{
+        display: flex;
+        justify-content: center !important;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+    }
+    nav ul li a{
+        font-size: 18px !important;
+        /* font-weight: 100 !important; */
+    }
+    nav .logo{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+
+
+
+.extCont{
+    /* height: 40vh; */
+    background-color: #000;
+    margin: 6rem 0 0 0;
+    padding: 1em;
+}
+
+
+.songList{
+    color: white;
+    padding: .4em;
+}
+.songItemsContainer{
+    margin-top: 1em;
+    display: flex;
+    flex-wrap:wrap ;
+    gap: 2em;
+    justify-content: space-between;
+    align-items: center;
+}
+.songItem{
+    background-color: #ffb703;
+    padding: 1em .4em;
+    display: flex;
+    justify-content: space-between;
+    width: 250px;
+    gap: .5em;
+    height: 50px;
+    border-radius: .5em;
+
+    img{
+        width: 50px;
+    }
+
+}
+
+.songName{
+    font-size: 12px;
+}
+.songListPlay{
+    display: flex;
+    justify-content: end;
+    align-items: end;
+    font-size: 12px;
 }

@@ -13,7 +13,7 @@ let songs = [
 // Varibles
 
 let songIndex = 0;
-let audioElement = new Audio(`Songs/4.mp3`);
+let audioElement = new Audio(`Songs/5.mp3`);
 
 let masterPlay = document.getElementById('masterPlay');
 let myProgressBar = document.getElementById('myProgressBar');
@@ -83,3 +83,25 @@ const formatTime=(time)=> {
 }
 console.log("time ",audioElement.currentTime);
 console.log("duration ",Number(audioElement.duration));
+
+
+const makeAllPlays = ()=>{
+    Array.from(document.getElementsByClassName('songItemPlay')).forEach((element)=>{
+        element.classList.remove('fa-pause-circle');
+        element.classList.add('fa-play-circle');
+    })
+}
+
+Array.from(document.getElementsByClassName('songItemPlay')).forEach((element)=>{
+    element.addEventListener('click', (e)=>{ 
+        makeAllPlays();
+        songIndex = parseInt(e.target.id);
+        e.target.classList.remove('fa-play-circle');
+        e.target.classList.add('fa-pause-circle');
+        audioElement.src = `songs/${songIndex+1}.mp3`;
+        audioElement.currentTime = 0;
+        audioElement.play();
+        masterPlay.classList.remove('fa-play-circle');
+        masterPlay.classList.add('fa-pause-circle');
+    })
+})

@@ -13,7 +13,8 @@ let songs = [
 // Varibles
 
 let songIndex = 0;
-let audioElement = new Audio(`Songs/5.mp3`);
+let audioElement = new Audio(songs[songIndex].filePath);
+
 
 let masterPlay = document.getElementById('masterPlay');
 let myProgressBar = document.getElementById('myProgressBar');

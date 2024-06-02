@@ -24,18 +24,62 @@ songItems.forEach((element, i)=>{
     element.getElementsByClassName("songName")[0].innerText = songs[i].songName; 
 })
 
-
-masterPlay.addEventListener('click', ()=>{
-    if(audioElement.paused || audioElement.currentTime<=0){
+const togglePlayPause = ()=> {
+    if (audioElement.paused || audioElement.currentTime <= 0) {
         audioElement.play();
         masterPlay.classList.remove('fa-play-circle');
         masterPlay.classList.add('fa-pause-circle');
-        gif.style.opacity = 1;
-    }
-    else{
+    } else {
         audioElement.pause();
         masterPlay.classList.remove('fa-pause-circle');
         masterPlay.classList.add('fa-play-circle');
-        gif.style.opacity = 0;
     }
+}
+
+masterPlay.addEventListener('touchstart', (event)=>{
+    event.preventDefault()
+    togglePlayPause()
+
 })
+masterPlay.addEventListener('click', (event)=>{
+    event.preventDefault()
+    togglePlayPause()
+})
+audioElement.addEventListener('play', function () {
+    document.body.style.animation = 'colorChanger 3s infinite';
+});
+
+audioElement.addEventListener('pause', function () {
+    document.body.style.animation = 'none';
+});
+
+audioElement.addEventListener('ended', function () {
+    document.body.style.animation = 'none';
+});
+
+audioElement.addEventListener('timeupdate', ()=>{ 
+    // Update Seekbar
+    progress = parseInt((audioElement.currentTime/audioElement.duration)* 100); 
+    myProgressBar.value = progress;
+})
+myProgressBar.addEventListener('change', ()=>{
+    audioElement.currentTime = myProgressBar.value * audioElement.duration/100;
+})
+audioElement.addEventListener('ended', ()=>{
+    masterPlay.classList.remove('fa-pause-circle');
+    masterPlay.classList.add('fa-play-circle');
+})
+
+let songTime = document.getElementById('songTime');
+let songDuration = document.getElementById('songDuration');
+audioElement.addEventListener('timeupdate', ()=>{
+    songTime.innerText = formatTime(audioElement.currentTime);
+    songDuration.innerText = formatTime(audioElement.duration);
+})
+const formatTime=(time)=> {
+    const minutes = Math.floor(time / 60);
+    const seconds = Math.floor(time % 60);
+    return `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+}
+console.log("time ",audioElement.currentTime);
+console.log("duration ",Number(audioElement.duration));

@@ -7,9 +7,14 @@ body {
     padding-left: .4em;
     padding-right: .4em;
     transition: border-color 1s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     animation: colorChanger 10s infinite;
 }
-
+.resContainer{
+    max-width: 1080px;
+}
 @keyframes colorChanger {
     0% {
         border-color: rgb(255, 0, 0); /* Red */
@@ -286,4 +291,23 @@ header{
     justify-content: end;
     align-items: end;
     font-size: 12px;
+    position: absolute;
+   
+    
+}
+
+.volumeControlContainer {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.volumeControlContainer i {
+    color: #000;
+}
+
+input[type="range"] {
+    width: 50px;
+    height: 3px;
 }

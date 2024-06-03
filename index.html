@@ -22,6 +22,8 @@
 
 </head>
 <body>
+    <div class="resContainer">
+
     <header>
         <nav>
             <div class="logo">
@@ -30,7 +32,7 @@
             <ul>
                 <li><a href="/">Home</a></li>
                 <li><a href="/">About</a></li>
-                <li><a href="/">Developer Contact</a></li>
+                <li><a href="https://www.linkedin.com/in/rafay-memon-930190253/" target="_blank">Developer Contact</a></li>
             </ul>
         </nav>
     </header>
@@ -107,17 +109,22 @@
     </div>
     <div class="player" id="disable">
         <div class="icons">
-            <!-- fontawesome icons -->
             <i class="fas fa-3x fa-step-backward" id="previous"></i>
             <i class="far fa-3x fa-play-circle" id="masterPlay"></i>
             <i class="fas fa-3x fa-step-forward" id="next"></i> 
         </div>
-        <div class="progressBarContainer ">
+        <div class="progressBarContainer">
             <span id="songTime">1:00</span>
-            <input id="myProgressBar" value="0" type="range" min="0" max="100" name="range">
+            <input id="myProgressBar" value="0" type="range" min="0" max="100">
             <span id="songDuration">0:00</span>
+            <!-- <div class="volumeControlContainer"> -->
+                <i class="fas fa-volume-down"></i>
+                <input id="volumeControl" type="range" min="0" max="100" value="50">
+                <i class="fas fa-volume-up"></i>
+            <!-- </div> -->
         </div>
     </div>
+</div>
 
 
     <script src="./script.js"></script>
